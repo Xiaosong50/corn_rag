@@ -1,0 +1,10 @@
+python-docx
+pandas
+sentence-transformers
+faiss-cpu
+tqdm
+transformers
+torch
+langchain
+langchain-community
+pydantic
