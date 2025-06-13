@@ -38,10 +38,10 @@ while True:
         images = meta.get('image') or meta.get('images')
         if isinstance(images, list):
             image_info = f"相关图片文件：{', '.join(images)}"
-            print(f"图片文件：{', '.join(images)}")
+            # print(f"图片文件：{', '.join(images)}")
         else:
             image_info = f"相关图片文件：{images}"
-            print(f"图片文件：{images}")
+            # print(f"图片文件：{images}")
         print(f"知识片段：\n{doc.page_content[:3000]}...")
         context += doc.page_content + "\n" + image_info + "\n"
 
