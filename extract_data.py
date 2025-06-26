@@ -22,58 +22,58 @@ def extract_blocks(text):
         title = lines[0].strip()
         content = '\n'.join(lines[1:])
 
-        # 每个字段用 **字段名** 抽取
-        # 症状/形态特征字段
-        symptoms = re.search(r'\*\*(症状|形态|形态特征)\*\*：(.*?)(\*\*|$)', content, re.S)
-        if symptoms:
-            symptom_field = symptoms.group(1).strip()
-            symptom_content = symptoms.group(2).strip()
-        else:
-            symptom_field = ""
-            symptom_content = ""
+        # # 每个字段用 **字段名** 抽取
+        # # 症状/形态特征字段
+        # symptoms = re.search(r'\*\*(症状|形态|形态特征)\*\*：(.*?)(\*\*|$)', content, re.S)
+        # if symptoms:
+        #     symptom_field = symptoms.group(1).strip()
+        #     symptom_content = symptoms.group(2).strip()
+        # else:
+        #     symptom_field = ""
+        #     symptom_content = ""
 
-        # 发病规律字段
-        rules = re.search(r'\*\*(发病规律|发生规律|生活习性)\*\*：(.*?)(\*\*|$)', content, re.S)
-        if rules:
-            rule_field = rules.group(1).strip()
-            rule_content = rules.group(2).strip()
-        else:
-            rule_field = ""
-            rule_content = ""
+        # # 发病规律字段
+        # rules = re.search(r'\*\*(发病规律|发生规律|生活习性)\*\*：(.*?)(\*\*|$)', content, re.S)
+        # if rules:
+        #     rule_field = rules.group(1).strip()
+        #     rule_content = rules.group(2).strip()
+        # else:
+        #     rule_field = ""
+        #     rule_content = ""
 
-        # 防治措施字段
-        controls = re.search(r'\*\*(药剂防治|防治措施|防治方法)\*\*：(.*?)(\*\*|$)', content, re.S)
-        if controls:
-            control_field = controls.group(1).strip()
-            control_content = controls.group(2).strip()
-        else:
-            control_field = ""
-            control_content = ""
-
-        record = {
-            "title": title,
-            "type": "病虫害",
-            "symptom_field": symptom_field,
-            "symptom_content": symptom_content,
-            "rule_field": rule_field,
-            "rule_content": rule_content,
-            "control_field": control_field,
-            "control_content": control_content
-            # "image": None
-        }
+        # # 防治措施字段
+        # controls = re.search(r'\*\*(药剂防治|防治措施|防治方法)\*\*：(.*?)(\*\*|$)', content, re.S)
+        # if controls:
+        #     control_field = controls.group(1).strip()
+        #     control_content = controls.group(2).strip()
+        # else:
+        #     control_field = ""
+        #     control_content = ""
 
         # record = {
         #     "title": title,
-        #     "content":section,
-        #     "images": [],
-        #     "image_path":[]
+        #     "type": "病虫害",
+        #     "symptom_field": symptom_field,
+        #     "symptom_content": symptom_content,
+        #     "rule_field": rule_field,
+        #     "rule_content": rule_content,
+        #     "control_field": control_field,
+        #     "control_content": control_content
+        #     # "image": None
         # }
+
+        record = {
+            "title": title,
+            "content":section,
+            # "images": [],
+            # "image_path":[]
+        }
         pest_data.append(record)
 
     # 杂草防除整体处理
     weed_record = {
         "title": "玉米田杂草防除技术",
-        "type": "杂草防除",
+        # "type": "杂草防除",
         "content": weed_part.strip()
         # "images": [],
         # "image_path":[]
