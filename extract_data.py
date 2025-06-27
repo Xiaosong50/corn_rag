@@ -64,7 +64,7 @@ def extract_blocks(text):
 
         record = {
             "title": title,
-            "content":section,
+            "content":f"标题：{title}\n 关键字：{section}",
             # "images": [],
             # "image_path":[]
         }
